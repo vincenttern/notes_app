@@ -12,50 +12,35 @@ class FormInput extends Component {
     this.setState({ [name]: value });
   };
 
-  // componentDidMount() {
-  //   const rememberMe = localStorage.getItem('t') === 'true';
-  //   const user = rememberMe ? localStorage.getItem('user') : '';
-  //   this.setState({ user, rememberMe });
-  // }
-
   handleFormSubmit = event => {
     event.preventDefault();
-    // const textInput = this.state.dbStorage.concat(this.state.textInput);
-    // console.log(textInput);
-    // const unqId = this.uniqueId();
 
-    // const newItem = this.state.dbStorage.concat({
-    //   unqId: this.state.textInput
-    // });
-
-    // const newItem = [uniqid() this.state.textInput];
-    // console.log(newItem);
     let newObj = {};
     let newArr = [];
 
     newArr.push(uniqid(), this.state.textInput);
     newObj[newArr[0]] = newArr[1];
-    // console.log(newObj);
-    const pushNewItem = this.state.dbStorage.concat(newObj);
+
     this.setState(
       {
-        dbStorage: pushNewItem
+        dbStorage: this.state.dbStorage.concat(newObj)
       },
       () => {
         localStorage.setItem("Notes", JSON.stringify(this.state.dbStorage));
+        console.log(this.state.dbStorage);
       }
     );
-
-    console.log(this.state.dbStorage);
   };
 
   componentDidMount() {
     const retreiveSavedItems = localStorage.getItem("Notes");
     const parseSavedItems = JSON.parse(retreiveSavedItems);
 
-    this.setState({
-      dbStorage: parseSavedItems
-    });
+    if (parseSavedItems) {
+      this.setState({
+        dbStorage: parseSavedItems
+      });
+    }
   }
 
   render() {
