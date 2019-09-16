@@ -19,7 +19,8 @@ class FormInput extends Component {
     let newArr = [];
 
     newArr.push(uniqid(), this.state.textInput);
-    newObj[newArr[0]] = newArr[1];
+    newObj["id"] = newArr[0];
+    newObj["textContent"] = newArr[1];
 
     this.setState(
       {
@@ -30,6 +31,24 @@ class FormInput extends Component {
         console.log(this.state.dbStorage);
       }
     );
+  };
+
+  displayData = () => {
+    let displayData;
+    if ("textContent" in this.state.dbStorage[0]) {
+      displayData = this.state.dbStorage[0]["textContent"];
+    }
+    return displayData;
+  };
+
+  deleteItem = event => {
+    let index = event.target.getAttribute("data-key");
+    let storedDB = JSON.parse(localStorage.getItem("Notes"));
+    storedDB.splice(index, 1);
+    this.setState({
+      dbStorage: storedDB
+    });
+    localStorage.setItem("Notes", JSON.stringify(storedDB));
   };
 
   componentDidMount() {
@@ -62,7 +81,21 @@ class FormInput extends Component {
         </main>
 
         <div>
-          <p>{this.state.textInput}</p>
+          <ul>
+            {this.state.dbStorage.map((data, index) => {
+              return (
+                <li id={data["id"]} key={index}>
+                  {data["textContent"]}{" "}
+                  <input
+                    type="button"
+                    value="Delete"
+                    onClick={this.deleteItem.bind(this)}
+                    data-key={index}
+                  />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     );
