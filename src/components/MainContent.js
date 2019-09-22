@@ -18,7 +18,7 @@ export default class MainContent extends Component {
     } = this.props;
 
     return (
-      <div>
+      <main>
         <Container style={{ marginTop: 10 }}>
           <Row>
             <Col md={{ span: 8, offset: 2 }}>
@@ -36,7 +36,7 @@ export default class MainContent extends Component {
             </Col>
           </Row>
         </Container>
-      </div>
+      </main>
     );
   }
 }
