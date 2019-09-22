@@ -1,9 +1,0 @@
-const textField = {
-    width: "50%",
-    height: "50%",
-    position: "relative",
-    left: "50%",
-    transform: "translate(-50%, 0)",
-    borderStyle: "ridge",
-    marginBottom: 60
-  };

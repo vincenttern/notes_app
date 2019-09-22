@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
+import styles from "./styles/appStyles.modules.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import uniqid from "uniqid";
 
@@ -10,6 +12,11 @@ class App extends Component {
     dbStorage: [],
     id: uniqid(),
     editItem: false
+  };
+
+  alertUser = event => {
+    event.preventDefault();
+    alert("Please write some text");
   };
 
   handleChange = event => {
@@ -81,6 +88,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleDelete={this.handleDelete}
           handleEdit={this.handleEdit}
+          alertUser={this.alertUser}
         />
       </div>
     );

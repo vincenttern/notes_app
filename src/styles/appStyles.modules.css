@@ -1,0 +1,40 @@
+header {
+  color: #fea49f;
+  background-color: #101357;
+  height: 60px;
+}
+
+header h2 {
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+}
+
+form textarea {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-style: ridge;
+}
+
+ul {
+  padding-top: 10px;
+  padding-left: 0;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  background-color: #101357;
+  transform: translate(-50%, 0);
+}
+
+ul h3 {
+  font-size: 30;
+  color: #fea49f;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}

@@ -5,21 +5,9 @@ export default class DisplayNotes extends Component {
   render() {
     const { data, handleDelete, handleEdit } = this.props;
 
-    const displayNotes = {
-      width: "50%",
-      position: "relative",
-      left: "50%",
-      transform: "translate(-50%, 0)"
-    };
-
-    const yourNotes = {
-      fontSize: 30,
-      textAlign: "center"
-    };
-
     return (
-      <ul style={displayNotes}>
-        <h3 style={yourNotes}> My Notes</h3>
+      <ul>
+        <h3> My Notes</h3>
         {data.dbStorage.map(item => {
           return (
             <NoteItem

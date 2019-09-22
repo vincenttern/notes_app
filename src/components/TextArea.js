@@ -1,37 +1,27 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
+import Button from "react-bootstrap/Button";
 
 export default class TextArea extends Component {
   render() {
-    const { data, handleChange, handleSubmit } = this.props;
-
-    const textField = {
-      width: "50%",
-      height: "50%",
-      position: "relative",
-      left: "50%",
-      transform: "translate(-50%, 0)",
-      borderStyle: "ridge",
-      marginBottom: 60
-    };
+    const { data, handleChange, handleSubmit, alertUser } = this.props;
 
     return (
-      <form onSubmit={handleSubmit}>
-        <TextField
-          id="standard-multiline-flexible"
+      <form onSubmit={!data.textInput ? alertUser : handleSubmit}>
+        <textarea
           label="Note"
           placeholder="Take down some notes....."
-          style={textField}
-          multiline
-          rows="10"
-          margin="normal"
           value={data.textInput}
           onChange={handleChange}
         />
-        <br />
-        <button type="submit">
+
+        <Button
+          variant={data.editItem ? "warning" : "primary"}
+          size="lg"
+          block
+          type="submit"
+        >
           {data.editItem ? "Edit Note" : "Add Note"}
-        </button>
+        </Button>
       </form>
     );
   }
