@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export default class NoteItem extends Component {
   render() {
@@ -14,14 +18,32 @@ export default class NoteItem extends Component {
           <Card.Body>
             <Card.Text>{title}</Card.Text>
             <Card.Link>
-              <span onClick={handleEdit}>
+              <Button variant="warning" onClick={handleEdit}>
                 <EditIcon />
-              </span>
+              </Button>
             </Card.Link>
             <Card.Link>
-              <span onClick={handleDelete}>
+              <Button
+                variant="danger"
+                onClick={() =>
+                  confirmAlert({
+                    title: "Confirm to submit",
+                    message: "Are you sure to do this.",
+                    buttons: [
+                      {
+                        label: "Yes",
+                        onClick: () => handleDelete("Click OK To Delete")
+                      },
+                      {
+                        label: "No",
+                        onClick: () => alert("Click OK To Not Delete?")
+                      }
+                    ]
+                  })
+                }
+              >
                 <DeleteForeverIcon />
-              </span>
+              </Button>
             </Card.Link>
           </Card.Body>
         </Card>
