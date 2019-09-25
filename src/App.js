@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
+import CurrentDate from "./Utils/Date";
 import styles from "./styles/appStyles.modules.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -27,21 +28,10 @@ class App extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    var today = new Date();
-    var date =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
-    var time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + " " + time;
-
     const newItem = {
       id: this.state.id,
       title: this.state.textInput,
-      date: dateTime
+      date: CurrentDate()
     };
 
     let updatedItems = [...this.state.dbStorage, newItem];
