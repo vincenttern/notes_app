@@ -27,16 +27,32 @@ class App extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    var today = new Date();
+    var date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    var time =
+      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + " " + time;
+
     const newItem = {
       id: this.state.id,
-      title: this.state.textInput
+      title: this.state.textInput,
+      date: dateTime
     };
 
-    const updatedItems = [...this.state.dbStorage, newItem];
+    let updatedItems = [...this.state.dbStorage, newItem];
+
+    let orderByDate = updatedItems.sort(function(a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
 
     this.setState(
       {
-        dbStorage: updatedItems,
+        dbStorage: orderByDate,
         textInput: "",
         id: uniqid(),
         editItem: false
@@ -58,7 +74,7 @@ class App extends Component {
   handleEdit = id => {
     const filterdNotes = this.state.dbStorage.filter(item => item.id !== id);
     const selectedNote = this.state.dbStorage.find(item => item.id === id);
-    console.log(selectedNote);
+
     this.setState({
       dbStorage: filterdNotes,
       textInput: selectedNote.title,

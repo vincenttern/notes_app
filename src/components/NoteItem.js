@@ -35,8 +35,7 @@ export default class NoteItem extends Component {
                         onClick: () => handleDelete("Click OK To Delete")
                       },
                       {
-                        label: "No",
-                        onClick: () => alert("Click OK To Not Delete?")
+                        label: "No"
                       }
                     ]
                   })
