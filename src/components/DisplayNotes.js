@@ -12,6 +12,7 @@ export default class DisplayNotes extends Component {
           return (
             <NoteItem
               key={item.id}
+              date={item.date}
               title={item.title}
               handleEdit={() => handleEdit(item.id)}
               handleDelete={() => handleDelete(item.id)}

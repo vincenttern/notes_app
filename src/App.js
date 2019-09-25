@@ -27,7 +27,7 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    console.log(CurrentDate());
     const newItem = {
       id: this.state.id,
       title: this.state.textInput,
