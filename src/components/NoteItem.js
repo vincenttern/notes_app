@@ -11,13 +11,20 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 export default class NoteItem extends Component {
   render() {
-    const { date, title, handleDelete, handleEdit } = this.props;
+    const { data, date, title, handleDelete, handleEdit } = this.props;
+
+    let editedItemTitle;
+    if (data.filteredEditItem) {
+      editedItemTitle = data.myEditItem;
+    }
 
     return (
       <li>
         <Card style={{ width: "100%" }}>
           <Card.Body>
-            <Card.Text>{title}</Card.Text>
+            <Card.Text>
+              {data.changedEditTitle ? editedItemTitle : title}
+            </Card.Text>
             <Breadcrumb>
               <Breadcrumb.Item>
                 <Button

@@ -12,7 +12,8 @@ class App extends Component {
     textInput: "",
     dbStorage: [],
     id: uniqid(),
-    editItem: false
+    editItem: false,
+    displayItem: ""
   };
 
   alertUser = event => {
@@ -27,7 +28,7 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(CurrentDate());
+
     const newItem = {
       id: this.state.id,
       title: this.state.textInput,
@@ -40,12 +41,18 @@ class App extends Component {
       return new Date(b.date) - new Date(a.date);
     });
 
+    let itemEdited;
+    if (this.state.filteredEditItem) {
+      itemEdited = this.state.textInput;
+    }
+
     this.setState(
       {
         dbStorage: orderByDate,
         textInput: "",
         id: uniqid(),
-        editItem: false
+        editItem: false,
+        myEditItem: itemEdited
       },
       () => localStorage.setItem("Notes", JSON.stringify(this.state.dbStorage))
     );
@@ -55,7 +62,8 @@ class App extends Component {
     const filterdNotes = this.state.dbStorage.filter(item => item.id !== id);
     this.setState(
       {
-        dbStorage: filterdNotes
+        dbStorage: filterdNotes,
+        displayItem: ""
       },
       localStorage.setItem("Notes", JSON.stringify(filterdNotes))
     );
@@ -63,14 +71,24 @@ class App extends Component {
 
   handleEdit = id => {
     const filterdNotes = this.state.dbStorage.filter(item => item.id !== id);
+    const filteredEditItem = this.state.dbStorage.filter(
+      item => item.id === id
+    );
     const selectedNote = this.state.dbStorage.find(item => item.id === id);
 
     this.setState({
       dbStorage: filterdNotes,
       textInput: selectedNote.title,
+      filteredEditItem: filteredEditItem,
       editItem: true,
+      changedEditTitle: true,
       id: id
     });
+  };
+
+  sideItemClicked = id => {
+    let itemClicked = this.state.dbStorage.filter(item => item.id === id);
+    this.setState({ displayItem: itemClicked, changedEditTitle: false });
   };
 
   componentDidMount() {
@@ -95,6 +113,7 @@ class App extends Component {
           handleDelete={this.handleDelete}
           handleEdit={this.handleEdit}
           alertUser={this.alertUser}
+          sideItemClicked={this.sideItemClicked}
         />
       </div>
     );

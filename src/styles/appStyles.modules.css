@@ -38,3 +38,14 @@ ul h3 {
 li {
   list-style: none;
 }
+
+div .list-group-item {
+  padding: 0.7rem 0rem;
+}
+
+div .col-sm-1 {
+  font-size: 12px;
+  padding-right: 0;
+  padding-left: 0;
+  font-style: italic;
+}

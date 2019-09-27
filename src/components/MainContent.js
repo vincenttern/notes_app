@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DisplayNotes from "./DisplayNotes";
 import TextArea from "./TextArea";
+import SideNotes from "./SideNotes";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -14,14 +15,18 @@ export default class MainContent extends Component {
       handleSubmit,
       handleDelete,
       handleEdit,
-      alertUser
+      alertUser,
+      sideItemClicked
     } = this.props;
 
     return (
       <main>
-        <Container style={{ marginTop: 10 }}>
+        <Container style={{ margin: 30, maxWidth: "95%" }}>
           <Row>
-            <Col md={{ span: 8, offset: 2 }}>
+            <Col xs={6} md={4}>
+              <SideNotes data={data} sideItemClicked={sideItemClicked} />
+            </Col>
+            <Col xs={12} md={8}>
               <TextArea
                 data={data}
                 handleChange={handleChange}
