@@ -12,7 +12,7 @@ export default class SideNotes extends Component {
 
     data.dbStorage.forEach(item => {
       if (item.title.length > 1 && item.date) {
-        let truncateTitle = item.title.substring(0, 40) + "...";
+        let truncateTitle = item.title.substring(0, 50) + " ...";
         let slicedDate = item.date.slice(5, 9);
         truncateTitles.push({
           title: truncateTitle,
@@ -34,7 +34,9 @@ export default class SideNotes extends Component {
             >
               <Container>
                 <Row>
-                  <Col sm={11}>{item.title}</Col>
+                  <Col style={{ fontSize: 13 }} sm={11}>
+                    {item.title}
+                  </Col>
                   <Col sm={1}>{item.cutDate}</Col>
                 </Row>
               </Container>
