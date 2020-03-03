@@ -1,68 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Beauty & Barber College
+## (Free feel to change anything)
 
-## Available Scripts
+## Steps to run locally
 
-In the project directory, you can run:
+- "npm install" or "yarn install" in root
+- "yarn run dev" or "npm run dev" to concurrently run Front and Back End server
 
-### `yarn start`
+## Setup Already
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### (Feel free to add stuff and try to explain it here so we all can understand):
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Babel - takes code with all different features (es6, es7) that old browser don't understand and transpile it to es5 code that old browser can understand
+- Webpack - takes code from all files and puts it into one known as bundle.js, removes spaces and tabs to reduce the size of bundle.js Then it link this bundle script tag to index.html file
+- Jest Testing - incase we want to test components in the future
+- Sass
 
-### `yarn test`
+## Rules team should follow
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### (Feel free to add rules and try to explain it here so we all can understand):
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Styling architecture
+- Follow CSS BEM naming convention, it will be easier to maintain when scale. It's basically just adopting a css naming. Read here to learn [BEM](https://medium.com/free-code-camp/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849)
+- Semantic Markup (Use them) - for accessibility and SEO. It's basically just using html tags Watch here [Semantic Markup](https://www.youtube.com/watch?v=9S_66Dg5Sqs)

@@ -1,0 +1,41 @@
+/********************************************/
+/**************** Base Style  ***************/
+/********************************************/
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// html,
+// body {
+//   height: 100%;
+//   position: relative;
+// }
+
+
+body {
+  color: $dark-grey;
+  font-family: Helvetica, Arial, San-serif;
+  font-size: $m-size;
+  line-height: 2;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.is-active {
+  font-weight: bold;
+}

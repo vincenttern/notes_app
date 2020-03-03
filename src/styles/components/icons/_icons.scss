@@ -1,0 +1,9 @@
+.fas.fa-hand-holding-usd {
+  font-size: $xxl-font;
+  color: rgba(0, 128, 0, 0.781);
+}
+
+.las.la-users {
+  @extend .fas.fa-hand-holding-usd;
+  color: white;
+}

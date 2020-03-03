@@ -1,0 +1,91 @@
+.contact__container {
+  padding: 2rem;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+
+  .contact__form--card {
+    background: transparent;
+
+    .contact__title {
+      font-size: 26px;
+    }
+  }
+
+  .contact__title {
+    color: #ffffffe0;
+    margin-left: 20px;
+  }
+
+  .contact__form--name {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .contact__form {
+      width: 90%;
+      margin: 0;
+      text-align: center;
+
+      label {
+        width: 100%;
+      }
+
+      input {
+        width: 90%;
+        padding: 0.1rem;
+      }
+    }
+
+    // .contact__form.first--name {
+    //     flex: 1;
+
+    // }
+
+    // .contact__form.last--name {
+    //     flex: 1;
+    // }
+  }
+
+  .contact__form--info {
+    @extend .contact__form--name;
+  }
+
+  .contact__subject--box {
+    text-align: center;
+
+    label {
+      width: 100%;
+    }
+
+    .contact__subject {
+      width: 95%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .contact__message--box {
+    text-align: center;
+
+    label {
+      width: 100%;
+    }
+
+    .contact__textarea {
+      padding: 0.3rem;
+      width: 95%;
+      height: 200px;
+    }
+  }
+
+  .form__bottom {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .contact__container {
+    padding: 5rem 10rem 5rem 10rem;
+
+  }
+}

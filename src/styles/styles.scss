@@ -1,0 +1,20 @@
+/********************************************/
+/*** Import Sass file after creating it *****/
+/********************************************/
+
+@import "./base/settings";
+@import "./base/base";
+@import "./components/header/header";
+@import "./components/header/header2";
+@import "./components/header/page-header";
+@import "./components/effects/loader";
+@import "./components/navbar/react-burger-menu";
+@import "./components/navbar/navbar-main";
+@import "./components/navbar/react-burger-menu-dropdown";
+@import "./components/footer/footer";
+@import "./components/home/home-top-section";
+@import "./components/contact/contact-form";
+@import "./components/buttons/buttons";
+@import "./components/effects/fade-in-section";
+
+@import './components/icons/icons'

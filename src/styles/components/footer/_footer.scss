@@ -1,0 +1,27 @@
+.footer__container {
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .createdBy {
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-size: $s-font;
+  }
+}
+
+@media (min-width: $desktop-breakpoint-700) {
+  .footer__container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media (min-width: $desktop-breakpoint-950) {
+  .footer__container {
+  }
+}
