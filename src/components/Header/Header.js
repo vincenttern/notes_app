@@ -15,7 +15,7 @@ class Header extends React.Component {
   render() {
     const { match, location, history } = this.props;
     return (
-      <div className="header">
+      <div id="header" className="header">
         <div className="header__container title">
           <NavbarBurgerMenu />
           <NavbarTitle />
