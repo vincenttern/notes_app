@@ -5,8 +5,6 @@
 @import "./base/settings";
 @import "./base/base";
 @import "./components/header/header";
-@import "./components/header/header2";
-@import "./components/header/page-header";
 @import "./components/effects/loader";
 @import "./components/navbar/react-burger-menu";
 @import "./components/navbar/navbar-main";
@@ -16,5 +14,6 @@
 @import "./components/contact/contact-form";
 @import "./components/buttons/buttons";
 @import "./components/effects/fade-in-section";
+@import "./components/createNote/createNote-section";
 
-@import './components/icons/icons'
+@import "./components/icons/icons";
