@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const routePaths = [
   { path: "/", name: "Home" },
+  { path: "/add-note", name: "Add New Note" },
   { path: "/contact", name: "Contact" }
 ];
 

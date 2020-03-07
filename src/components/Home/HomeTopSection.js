@@ -104,16 +104,20 @@ class HomeTopSection extends Component {
 
   render() {
     return (
-      <MainContent
-        data={this.state}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        handleDelete={this.handleDelete}
-        handleEdit={this.handleEdit}
-        alertUser={this.alertUser}
-        sideItemClicked={this.sideItemClicked}
-      />
+      <div>
+        <h1>My Notes</h1>
+      </div>
     );
   }
 }
 export default HomeTopSection;
+
+// <MainContent
+//         data={this.state}
+//         handleChange={this.handleChange}
+//         handleSubmit={this.handleSubmit}
+//         handleDelete={this.handleDelete}
+//         handleEdit={this.handleEdit}
+//         alertUser={this.alertUser}
+//         sideItemClicked={this.sideItemClicked}
+//       />
