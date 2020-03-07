@@ -1,5 +1,4 @@
 # Notebeast
-## (Free feel to change anything)
 
 ## Steps to run locally
 
