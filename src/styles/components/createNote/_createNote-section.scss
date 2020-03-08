@@ -1,0 +1,36 @@
+.createNote__container {
+  padding: 5rem;
+
+  form {
+    .title__box {
+      input {
+        height: 40px;
+      }
+    }
+    .subject__date {
+      display: flex;
+
+      .subject__date--box {
+        width: 100%;
+      }
+      .subject__date--box:first-child {
+        input {
+          height: 40px;
+        }
+      }
+
+      .subject__date--box:last-child {
+        input {
+          height: 40px;
+        }
+      }
+    }
+    .description {
+      textarea {
+        height: 400px;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  }
+}
