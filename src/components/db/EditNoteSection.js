@@ -42,7 +42,7 @@ export default function EditNoteSection() {
     console.log(note);
 
     axios
-      .post("http://localhost:5000/notes/update" + id, note)
+      .post("http://localhost:5000/notes/update/" + id, note)
       .then(res => console.log(res.data))
       .catch(err => console.log(`My error: ${err}`));
 
@@ -51,12 +51,12 @@ export default function EditNoteSection() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/post" + id)
+      .get("http://localhost:5000/notes/" + id)
       .then(response => {
         setTitle(response.data.title);
         setSubject(response.data.subject);
         setDescription(response.data.description);
-        setDate(response.data.date);
+        setDate(new Date(response.data.date));
       })
       .catch(function(error) {
         console.log(`Edit page ${error}`);

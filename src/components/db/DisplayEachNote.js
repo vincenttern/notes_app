@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DisplayEachNote = ({ currNote, deleteNote, key }) => {
+const DisplayEachNote = ({ currNote, deleteNote }) => {
   return (
     <tbody>
       {currNote.map(curr => (

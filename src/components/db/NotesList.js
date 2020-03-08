@@ -28,12 +28,12 @@ export default function NotesList() {
   };
 
   const notesList = () => {
-    return notes.map(currentNote => {
+    return notes.map((currentNote, index) => {
       return (
         <DisplayEachNote
           currNote={currentNote}
           deleteNote={deleteNote}
-          key={currentNote._id}
+          key={index}
         />
       );
     });
@@ -41,7 +41,7 @@ export default function NotesList() {
 
   return (
     <div>
-      <h3>My Notes</h3>
+      <h1>My Notes</h1>
 
       {notes.length > 0 ? (
         <table className="table">

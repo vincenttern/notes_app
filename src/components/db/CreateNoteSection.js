@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function CreateNoteSection() {
   const [title, setTitle] = useState("");
-  const [subject, setSubject] = useState([]);
+  const [subject, setSubject] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
 
