@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let Note = require("../models/note.model");
 
-router.route("/api").get((req, res) => {
+router.route("/").get((req, res) => {
   Note.find()
     .then(notes => res.json(notes))
     .catch(err => res.status(400).json("Error: " + err));
@@ -26,19 +26,19 @@ router.route("/add").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-router.route("/api:id").get((req, res) => {
+router.route("/:id").get((req, res) => {
   Note.findById(req.params.id)
     .then(note => res.json(note))
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-router.route("/api:id").delete((req, res) => {
+router.route("/:id").delete((req, res) => {
   Note.findByIdAndDelete(req.params.id)
     .then(() => res.json("Note deleted."))
     .catch(err => res.status(400).json("Error: " + err));
 });
 
-router.route("/api/update/:id").post((req, res) => {
+router.route("/update/:id").post((req, res) => {
   Note.findById(req.params.id)
     .then(note => {
       note.title = req.body.title;

@@ -8,7 +8,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 
 // import Navbar from "./components/navbar.component";
 // import ExerciseList from "../components/db/ExerciseList";
-import EditNote from "../components/db/EditNote";
+import EditNote from "../pages/EditNote";
 
 export const history = createHistory();
 

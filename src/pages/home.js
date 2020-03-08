@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import HomeTopSection from "../components/Home/HomeTopSection";
-
+import NotesList from "../components/db/NotesList";
 import Footer from "../components/Footer/Footer";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Header />
 
-      <HomeTopSection />
+      <NotesList />
 
       <Footer />
     </div>
