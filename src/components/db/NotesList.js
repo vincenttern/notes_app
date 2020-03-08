@@ -41,7 +41,7 @@ export default function NotesList() {
 
   return (
     <div>
-      <h1>My Notes</h1>
+      <h2>My Notes</h2>
 
       {notes.length > 0 ? (
         <table className="table">
@@ -49,8 +49,9 @@ export default function NotesList() {
             <tr>
               <th>Title</th>
               <th>Subject</th>
-              <th>Description</th>
+
               <th>Date</th>
+              <td>Reminder</td>
               <th>Actions</th>
             </tr>
           </thead>
