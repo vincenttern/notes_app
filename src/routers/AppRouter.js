@@ -6,8 +6,6 @@ import Contact from "../pages/Contact";
 import CreateNote from "../pages/CreateNote";
 import NotFoundPage from "../pages/NotFoundPage";
 
-// import Navbar from "./components/navbar.component";
-// import ExerciseList from "../components/db/ExerciseList";
 import EditNote from "../pages/EditNote";
 
 export const history = createHistory();

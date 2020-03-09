@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 import axios from "axios";
 
-function ContactForm(props) {
+export default function ContactForm(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -32,6 +31,7 @@ function ContactForm(props) {
     e.preventDefault();
 
     alert("Form Submitted! I will get back to you shortly.");
+    window.location = "/";
 
     const dataToSubmit = {
       firstName,
@@ -96,7 +96,6 @@ function ContactForm(props) {
               <label>
                 <input
                   id="phone"
-                  required
                   value={phone}
                   onChange={handleClick}
                   placeholder="Phone Number"
@@ -145,5 +144,3 @@ function ContactForm(props) {
     </div>
   );
 }
-
-export default ContactForm;

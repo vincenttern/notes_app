@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Truncate from "react-truncate";
+import TruncateText from "./TruncateText";
 
 const DisplayEachNote = ({ currNote, deleteNote }) => {
   return (
@@ -25,14 +25,6 @@ const DisplayEachNote = ({ currNote, deleteNote }) => {
       ))}
     </tbody>
   );
-};
-
-const TruncateText = item => {
-  if (item.length) {
-    let truncateTitle = item.substring(0, 200) + " ...";
-
-    return truncateTitle;
-  }
 };
 
 export default DisplayEachNote;
