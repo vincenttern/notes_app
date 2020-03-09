@@ -2,7 +2,7 @@
   "name": "notebeast",
   "version": "1.0.0",
   "description": "",
-  "main": "/backend/server.js",
+  "main": "./backend/server.js",
   "engines": {
     "npm": "6.13.6",
     "node": "10.16.3"
