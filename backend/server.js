@@ -27,7 +27,7 @@ connection.once("open", () => {
 
 app.use("/notes", notesRouter);
 
-const { sendEmail } = require("./mail");
+const { sendEmail } = require("./Mail/Mail");
 app.post("/api/sendMail", (req, res) => {
   const data = req.body;
   console.log(data);
