@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "/../build")));
+// app.use(express.static(path.join(__dirname, "/../build")));
 
 const uri = process.env.ATLAS_URI;
 mongoose
@@ -39,9 +39,9 @@ app.post("/api/sendMail", (req, res) => {
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
-app.get("/*", function(req, res, next) {
-  res.sendFile(path.join(__dirname + "/../build/index.html"));
-});
+// app.get("/*", function(req, res, next) {
+//   res.sendFile(path.join(__dirname + "/../build/index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
