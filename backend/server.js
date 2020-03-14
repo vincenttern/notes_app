@@ -15,15 +15,16 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "/../build")));
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
-});
-const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MongoDB database connection established successfully");
-});
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  })
+  .then(res =>
+    console.log("MongoDB database connection established successfully")
+  )
+  .catch(err => console.log(`Error: ${err}`));
 
 app.use("/notes", notesRouter);
 
