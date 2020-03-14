@@ -9,7 +9,7 @@ import "./styles/styles.scss";
 import LoadingPage from "./pages/LoadingPage";
 
 const jsx = <AppRouter />;
-
+console.log("test");
 let hasRendered = false;
 const renderApp = () => {
   if (!hasRendered) {
