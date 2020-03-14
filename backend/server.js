@@ -18,30 +18,30 @@ corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use(express.static(path.join(publicPath, "dist")));
+app.use("/dist", express.static(path.join(publicPath, "dist")));
 
 const uri = process.env.ATLAS_URI;
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(uri, {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true
-//     });
-//     console.log("MongoDB is Connected!");
-//   } catch (err) {
-//     console.log(err.message);
-//     process.exit(1);
-//   }
-// };
-mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(res =>
-    console.log("MongoDB database connection established successfully")
-  )
-  .catch(err => console.log(`Error: ${err}`));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log("MongoDB is Connected!");
+  } catch (err) {
+    console.log(err.message);
+    process.exit(1);
+  }
+};
+// mongoose
+//   .connect(uri, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   })
+//   .then(res =>
+//     console.log("MongoDB database connection established successfully")
+//   )
+//   .catch(err => console.log(`Error: ${err}`));
 
 app.use("/notes", notesRouter);
 
@@ -56,7 +56,7 @@ app.post("/api/sendMail", (req, res) => {
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
-app.get("/*", function(req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
