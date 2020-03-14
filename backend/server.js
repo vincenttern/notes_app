@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const notesRouter = require("./routes/notes");
 const path = require("path");
+const publicPath = path.join(__dirname, "..", "public");
 
 require("dotenv").config();
 
@@ -12,7 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../public/dist")));
+// app.use(express.static(path.join(__dirname, "../public/dist")));
 
 const uri = process.env.ATLAS_URI;
 mongoose
@@ -39,8 +40,8 @@ app.post("/api/sendMail", (req, res) => {
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
-app.get("/*", function(req, res, next) {
-  res.sendFile(path.join(__dirname + "../public/index.html"));
+app.get("*", function(req, res) {
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 app.listen(port, () => {
