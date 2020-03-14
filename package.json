@@ -6,11 +6,12 @@
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
+    "backend-install": "yarn install --prefix backend",
     "dev-server": "webpack-dev-server",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "nodemon backend/server.js",
     "dev": "concurrently \"yarn run dev-server\"  \"yarn run start\"",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json"
   },
   "author": "",
   "license": "ISC",
