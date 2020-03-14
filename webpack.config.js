@@ -43,7 +43,6 @@ module.exports = env => {
     },
     plugins: [
       CSSExtract,
-
       new UglifyJsPlugin({
         sourceMap: true,
         uglifyOptions: {
