@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header/Header";
-import HomeTopSection from "../components/Home/HomeTopSection";
 import NotesList from "../components/db/NotesList";
 import Footer from "../components/Footer/Footer";
 
