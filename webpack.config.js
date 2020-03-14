@@ -57,7 +57,7 @@ module.exports = env => {
     devServer: {
       contentBase: path.join(__dirname, "public"),
       historyApiFallback: true,
-      publicPath: "/dist/",
+      publicPath: "/",
       proxy: {
         "/api": {
           target: "http://localhost:5000",
