@@ -40,7 +40,7 @@ app.post("/api/sendMail", (req, res) => {
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
-app.get("*", function(req, res) {
+app.get("/*", function(req, res) {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
