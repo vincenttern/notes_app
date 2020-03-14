@@ -2,6 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "npm": "6.13.6",
+    "node": "10.16.3"
+  },
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
