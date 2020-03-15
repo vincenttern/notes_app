@@ -9,7 +9,7 @@ export default function NotesList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/notes/")
+      .get("/notes/")
       .then(response => {
         setNotes(prevState => [...prevState, response.data]);
       })
@@ -18,7 +18,7 @@ export default function NotesList() {
 
   const deleteNote = id => {
     axios
-      .delete("http://localhost:5000/notes/" + id)
+      .delete("/notes/" + id)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
 
