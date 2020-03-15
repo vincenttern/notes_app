@@ -43,23 +43,19 @@ export default function NotesList() {
     <div>
       <h2>My Notes</h2>
 
-      {notes.length > 0 ? (
-        <table className="table">
-          <thead className="thead">
-            <tr>
-              <th>Title</th>
-              <th>Subject</th>
+      <table className="table">
+        <thead className="thead">
+          <tr>
+            <th>Title</th>
+            <th>Subject</th>
 
-              <th>Date</th>
-              <td>Reminder</td>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          {notesList()}
-        </table>
-      ) : (
-        <h1>No Notes, Add Some to Get Started</h1>
-      )}
+            <th>Date</th>
+            <td>Reminder</td>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        {notesList()}
+      </table>
     </div>
   );
 }
