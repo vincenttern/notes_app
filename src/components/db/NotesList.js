@@ -8,14 +8,12 @@ export default function NotesList() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    (async function getNoteList() {
-      const gettingList = await axios
-        .get("http://localhost:5000/notes/")
-        .then(response => {
-          setNotes(prevState => [...prevState, response.data]);
-        })
-        .catch(err => console.log(err));
-    })();
+    axios
+      .get("http://localhost:5000/notes/")
+      .then(response => {
+        setNotes(prevState => [...prevState, response.data]);
+      })
+      .catch(err => console.log(err));
   }, []);
 
   const deleteNote = id => {
@@ -43,19 +41,23 @@ export default function NotesList() {
     <div>
       <h2>My Notes</h2>
 
-      <table className="table">
-        <thead className="thead">
-          <tr>
-            <th>Title</th>
-            <th>Subject</th>
+      {notes.length > 0 ? (
+        <table className="table">
+          <thead className="thead">
+            <tr>
+              <th>Title</th>
+              <th>Subject</th>
 
-            <th>Date</th>
-            <td>Reminder</td>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        {notesList()}
-      </table>
+              <th>Date</th>
+              <td>Reminder</td>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          {notesList()}
+        </table>
+      ) : (
+        <h1>No Notes, Add Some to Get Started</h1>
+      )}
     </div>
   );
 }
