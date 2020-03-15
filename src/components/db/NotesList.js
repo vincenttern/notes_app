@@ -9,7 +9,7 @@ export default function NotesList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/notes")
+      .get("http://localhost:5000/notes/")
       .then(response => {
         setNotes(prevState => [...prevState, response.data]);
       })
