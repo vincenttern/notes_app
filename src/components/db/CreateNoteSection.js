@@ -39,7 +39,7 @@ export default function CreateNoteSection() {
     console.log(note);
 
     axios
-      .post("http://localhost:5000/notes/add", note)
+      .post("/notes/add", note)
       .then(res => console.log(res.data))
       .catch(err => console.log(`My error: ${err}`));
 
