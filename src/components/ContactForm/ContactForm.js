@@ -30,8 +30,8 @@ export default function ContactForm(props) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    // alert("Form Submitted! I will get back to you shortly.");
-    // window.location = "/";
+    alert("Form Submitted! I will get back to you shortly.");
+    window.location = "/";
 
     const dataToSubmit = {
       firstName,
